@@ -1,0 +1,62 @@
+<body>
+  <header>
+    <h1>Moda Perú Online</h1>
+    <p>Moda casual y urbana para todos</p>
+  </header>
+
+  <nav>
+  <a routerLink="/">Inicio</a>
+  <a (click)="goToCarrito()">🛒 Carrito</a>
+  </nav>
+
+  <section id="banner">
+    ¡Nuevas colecciones 2025!
+  </section>
+
+  <main>
+    <section class="intro">
+      <h2>Bienvenido a Moda Perú Online</h2>
+      <p>Descubre las últimas tendencias en ropa para hombres, mujeres y niños. Envíos a todo el Perú.</p>
+    </section>
+
+ <section class="categorias-destacadas">
+  <h3>Categorías Populares</h3>
+  <div class="categorias-grid">
+    <div class="categoria" (click)="filtrarPorCategoria('Hombre')">
+     <i class="bi bi-person-standing"></i>
+      <h4>Hombre</h4>
+    </div>
+    <div class="categoria" (click)="filtrarPorCategoria('Mujer')">
+      <i class="bi bi-person-standing-dress"></i>
+      <h4>Mujer</h4>
+    </div>
+    <div class="categoria" (click)="filtrarPorCategoria('Niños')">
+        <i class="bi bi-person-walking"></i>      
+        <h4>Niños</h4>
+    </div>
+    <div class="categoria" *ngIf="categoriaSeleccionada" (click)="mostrarTodo()">
+      <h4>Ver Todo</h4>
+    </div>
+  </div>
+</section>
+<br>
+<section class="catalogo">
+  <h3 *ngIf="categoriaSeleccionada">Mostrando: {{ categoriaSeleccionada }}</h3>
+  <div class="productos-grid">
+    <div class="producto" *ngFor="let p of productos">
+      <img [src]="p.imagen" [alt]="p.nombre" />
+      <h4>{{ p.nombre }}</h4>
+      <p>{{ p.descripcion }}</p>
+      <strong>S/ {{ p.precio }}</strong>
+      <br>
+    <button (click)="agregarAlCarrito(p)">Añadir al carrito</button>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Moda Perú Online. Todos los derechos reservados.
+  </footer>
+</body>
