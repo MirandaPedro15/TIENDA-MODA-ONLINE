@@ -10,6 +10,11 @@ body {
   color: #333;
   line-height: 1.6;
 }
+.enlace-producto {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 header {
   background: linear-gradient(90deg, #d4145a, #fbb03b);

@@ -1,0 +1,19 @@
+<h4>Valoraciones</h4>
+<div *ngFor="let v of valoraciones" class="valoracion">
+  <p><strong>{{ v.nombreCliente }}</strong> - {{ v.fecha | date:'shortDate' }}</p>
+  <p>
+    ⭐{{ v.estrellas }}<br />
+    {{ v.comentario }}
+  </p>
+  <hr />
+</div>
+
+<h5>Dejar una valoración</h5>
+<div class="form-valoracion">
+  <input [(ngModel)]="nuevaValoracion.nombreCliente" placeholder="Tu nombre" />
+  <select [(ngModel)]="nuevaValoracion.estrellas">
+    <option *ngFor="let n of [1,2,3,4,5]" [value]="n">{{ n }} estrellas</option>
+  </select>
+  <textarea [(ngModel)]="nuevaValoracion.comentario" placeholder="Comentario"></textarea>
+  <button (click)="enviarValoracion()">Enviar</button>
+</div>

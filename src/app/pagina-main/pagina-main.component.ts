@@ -3,11 +3,12 @@ import { ProductoService } from '../producto.service';
 import { Product } from '../interfaces/producto.model';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../cart.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { ValoracionesComponent } from '../valoraciones/valoraciones.component';
 
 @Component({
   selector: 'app-pagina-main',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './pagina-main.component.html',
   styleUrl: './pagina-main.component.scss'
 })

@@ -1,0 +1,18 @@
+<header>
+   <h1>Moda Perú Online</h1>
+    <p>Dejanos saber tu opinión</p>  
+</header>
+<div *ngIf="producto" class="detalle-container">
+  <img [src]="producto.imagen" [alt]="producto.nombre" class="imagen-producto" />
+  <div class="info-producto">
+    <h2>{{ producto.nombre }}</h2>
+    <p>{{ producto.descripcion }}</p>
+    <h3>S/ {{ producto.precio }}</h3>
+    <p>Stock: {{ producto.stock }}</p>
+
+    <button (click)="agregarAlCarrito()">Añadir al carrito</button>
+  </div>
+</div>
+
+<hr />
+<app-valoraciones [productoId]="producto!.id"></app-valoraciones>

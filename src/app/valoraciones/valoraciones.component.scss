@@ -1,0 +1,61 @@
+.valoracion {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.valoracion p {
+  margin: 0.3rem 0;
+}
+
+.valoracion strong {
+  color: #c2185b;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1rem 0 0.5rem 0;
+}
+
+h4, h5 {
+  color: #c2185b;
+  margin-top: 1.5rem;
+}
+
+.form-valoracion {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  margin-bottom: 2rem;
+}
+
+.form-valoracion input,
+.form-valoracion select,
+.form-valoracion textarea {
+  width: 100%;
+  margin-bottom: 0.8rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-valoracion button {
+  background: #c2185b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.form-valoracion button:hover {
+  background: #ad1457;
+}
