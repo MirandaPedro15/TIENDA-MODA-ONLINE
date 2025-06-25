@@ -1,0 +1,40 @@
+<header>
+  <h1>Moda Perú Online</h1>
+  <p>CheckOut de tu pedido</p>
+</header>
+
+<main>
+  <section class="checkout-container">
+    <div *ngIf="!confirmado" class="checkout-form">
+      <h2>Finalizar Compra</h2>
+      <form (ngSubmit)="pagar()" autocomplete="off">
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" [(ngModel)]="nombre" name="nombre" required placeholder="Ej: Juan Pérez" />
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección de entrega</label>
+          <input id="direccion" [(ngModel)]="direccion" name="direccion" required placeholder="Ej: Av. Siempre Viva 123" />
+        </div>
+        <div class="form-group">
+          <label for="metodoEnvio">Método de Envío</label>
+          <select id="metodoEnvio" [(ngModel)]="metodoEnvio" name="metodoEnvio" required>
+            <option value="delivery">Delivery (S/ 10)</option>
+            <option value="recojo">Recojo en tienda (gratis)</option>
+          </select>
+        </div>
+        <div class="form-total">
+          <h3>Total: S/ {{ cartService.getTotal() + (metodoEnvio === 'delivery' ? 10 : 0) | number:'1.2-2' }}</h3>
+        </div>
+        <button type="submit" class="btn-confirmar">Confirmar Compra</button>
+      </form>
+    </div>
+
+    <div *ngIf="confirmado" class="checkout-confirmado">
+      <h2>¡Gracias por tu compra!</h2>
+      <p>Tu pedido fue generado exitosamente.</p>
+      <p><strong>ID de pedido:</strong> {{ pedidoId }}</p>
+      <p class="backToMain" (click)="backToMain()">¿Deseas Algo Más? Puedes Seguir Explorando Nuestro Catálogo</p>
+    </div>
+  </section>
+</main>

@@ -1,17 +1,31 @@
-<h2>Mi Carrito</h2>
+  <header>
+    <h1>Moda Perú Online</h1>
+    <p>Tu carrito de compras</p>
+    <p class="backToMain" (click)="backToMain()">¿Olvidas algo? Regresa al Menú Principal</p>
+  </header>
+  
+
+<main>
+<section class="carrito-container">
 <div *ngIf="carrito.length === 0">El carrito está vacío.</div>
 
-<div *ngFor="let item of carrito" class="item-carrito">
-  <img [src]="item.producto.imagen" width="80" />
-  <div>
+<div *ngFor="let item of carrito" class="producto">
+  <img [src]="item.producto.imagen" width="80"/>
+  <div class="detalle">
     <h4>{{ item.producto.nombre }}</h4>
-    <p>Cantidad: {{ item.cantidad }}</p>
     <strong>S/ {{ item.producto.precio * item.cantidad }}</strong>
-    <button (click)="eliminar(item.producto.id)">Eliminar</button>
   </div>
+    <div class="acciones">
+      <button (click)="eliminar(item.producto.id)">Eliminar</button>
+      <p>Cantidad: {{ item.cantidad }}</p>
+    </div>
 </div>
 
 <hr />
-<h3>Total: S/ {{ total() }}</h3>
+<h3>Total: S/ {{ total() | number:'1.2-2' }}</h3>
 
-<a routerLink="/checkout" *ngIf="carrito.length > 0" class="btn btn-primary">Ir a Pagar</a>
+<a class="backToMain" (click)="goToCheckout()" *ngIf="carrito.length > 0" class="btn btn-primary">Ir a Pagar</a>
+
+</section>
+
+</main>

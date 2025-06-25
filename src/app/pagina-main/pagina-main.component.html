@@ -44,12 +44,11 @@
   <h3 *ngIf="categoriaSeleccionada">Mostrando: {{ categoriaSeleccionada }}</h3>
   <div class="productos-grid">
     <div class="producto" *ngFor="let p of productos">
-      <img [src]="p.imagen" [alt]="p.nombre" />
       <h4>{{ p.nombre }}</h4>
       <p>{{ p.descripcion }}</p>
       <strong>S/ {{ p.precio }}</strong>
       <br>
-    <button (click)="agregarAlCarrito(p)">Añadir al carrito</button>
+    <button class="addCarrito" (click)="agregarAlCarrito(p)">Añadir al carrito</button>
     </div>
   </div>
 </section>

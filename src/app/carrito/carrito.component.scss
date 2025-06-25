@@ -1,0 +1,66 @@
+header {
+  background: linear-gradient(90deg, #d4145a, #fbb03b);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #fff;
+}
+.backToMain{
+    cursor: pointer;
+}
+.backToMain:hover{
+    text-decoration: underline;
+}
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+  min-height: 70vh;
+}
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.acciones button {
+  padding: 0.4rem 0.6rem;
+  background-color: #d4145a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.acciones button:hover {
+  background-color: #fbb03b;
+  color: #222;
+}
+
+.carrito-container {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.producto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.detalle {
+  flex-grow: 1;
+}

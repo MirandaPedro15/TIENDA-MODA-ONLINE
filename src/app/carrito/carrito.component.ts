@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { CartService, CartItem } from '../cart.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './carrito.component.html',
-  styleUrl: './carrito.component.scss'
+  styleUrls: ['./carrito.component.scss']
 })
 export class CarritoComponent {
   carrito: CartItem[] = [];
 
-  constructor( public cartService: CartService){
+  constructor( public cartService: CartService, private router: Router){
     this.carrito = this.cartService.getItems();
   }
 
@@ -22,5 +24,13 @@ export class CarritoComponent {
 
   total(): number {
     return this.cartService.getTotal();
+  }
+
+  backToMain(){
+    this.router.navigate(['/PaginaMain'])
+  }
+
+  goToCheckout(){
+    this.router.navigate(['/checkout'])
   }
 }
