@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build && ng run ingsoftware2:server",
+    "serve:ssr": "node dist/ingsoftware2/server/server.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:INGSOFTWARE2": "node dist/ingsoftware2/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.4",
     "@netlify/angular-runtime": "^2.4.0",
+    "@nguniversal/express-engine": "^7.0.2",
     "bootstrap-icons": "^1.13.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
