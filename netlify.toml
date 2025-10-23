@@ -2,6 +2,15 @@
   command = "ng build --configuration production"
   publish = "dist/ingsoftware2/browser"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+# Deshabilitar plugins automáticos
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    disabled = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
