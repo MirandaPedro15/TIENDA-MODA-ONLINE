@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist/ingsoftware2"
+  publish = "dist/ingsoftware2/browser"
 
 [build.environment]
   NODE_VERSION = "18"
