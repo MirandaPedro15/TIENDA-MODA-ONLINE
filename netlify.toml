@@ -1,10 +1,9 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/ingsoftware2/browser"
+  command = "npm run build"
+  publish = "dist/ingsoftware2"
 
 [build.environment]
   NODE_VERSION = "18"
-  NETLIFY_SKIP_FRAMEWORK_DETECTION = "true"
 
 [[redirects]]
   from = "/*"

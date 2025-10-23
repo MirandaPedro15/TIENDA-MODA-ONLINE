@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production --output-path dist/ingsoftware2",
     "build:ssr": "ng build && ng run ingsoftware2:server",
     "serve:ssr": "node dist/ingsoftware2/server/server.mjs",
     "watch": "ng build --watch --configuration development",
