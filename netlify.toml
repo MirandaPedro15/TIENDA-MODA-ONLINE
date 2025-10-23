@@ -1,6 +1,6 @@
 [build]
   command = "ng build --configuration production"
-  publish = "dist/ingsoftware2"
+  publish = "dist/ingsoftware2/browser"
 
 [[redirects]]
   from = "/*"
