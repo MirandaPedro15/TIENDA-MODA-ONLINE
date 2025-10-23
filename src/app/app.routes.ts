@@ -8,11 +8,14 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
 
 export const routes: Routes = [
-    {path: 'PaginaMain', component: PaginaMainComponent},
-    {path: 'Login', component: PaginaLoginComponent},
-    {path: 'Carrito', component: CarritoComponent },
-    {path: 'checkout', component: CheckoutComponent },
-    {path: 'producto/:id', component: DetalleProductoComponent},
-    {path: '**', redirectTo: 'Login' },
-
+    { path: 'PaginaMain', component: PaginaMainComponent },
+    { path: 'Login', component: PaginaLoginComponent },
+    { path: 'Carrito', component: CarritoComponent },
+    { path: 'checkout', component: CheckoutComponent },
+    { 
+        path: 'producto/:id', 
+        component: DetalleProductoComponent,
+        data: { prerender: false } // Agregar esta línea
+    },
+    { path: '**', redirectTo: 'Login' }
 ];
